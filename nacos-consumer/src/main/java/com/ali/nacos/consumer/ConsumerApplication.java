@@ -31,6 +31,7 @@ public class ConsumerApplication {
         @GetMapping("/echo/app-name")
         public String echoAppName(){
             //Access through the combination of LoadBalanceClient and RestTemplate
+            //select serviceId and restTemplate get
             ServiceInstance serviceInstance = loadBalancerClient.choose("nacos-provider");
             String path = String.format("http://%s:%s/echo/%s",serviceInstance.getHost(),serviceInstance.getPort(),appName);
             System.out.println("request path:" +path);
@@ -42,7 +43,6 @@ public class ConsumerApplication {
     //Instantiate RestTemplate Instance
     @Bean
     public RestTemplate restTemplate(){
-
         return new RestTemplate();
     }
 
