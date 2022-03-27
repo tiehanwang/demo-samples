@@ -19,7 +19,7 @@ public class Solution3 {
         int left = 0;
         for (int i = 0; i < chars.length; i++) {
             if(hashMap.containsKey(chars[i])){
-                //left为窗口内第一个不重复的字母 当前字母和之前的字符串出现重复故而将窗口右提到重复字母的下一个 如果已经不覆盖则略过
+                //left为窗口内不重复的字母 当前字母和之前的字符串出现重复故而将窗口右提到重复字母的下一个 如果已经不覆盖即当前左边界已经跳过前值则略过边界不动
                 left = Math.max(left,hashMap.get(chars[i])+1);
             }
             hashMap.put(chars[i],i);
