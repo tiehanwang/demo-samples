@@ -12,8 +12,11 @@ import java.util.List;
  */
 public class Solution728 {
     public List<Integer> selfDividingNumbers(int left, int right) {
-        //i ii iii iiii
-        // 1-9
+        //暴力模拟解
+        //用标签也可更优雅解
+        //打表也行
+        //时间复杂度O(nlog(right)) n-> right-left+1
+        //空间复杂度O(1)
         List<Integer> list = new ArrayList<>();
         for (int i = left; i <= right; i++) {
             if(i<10){
