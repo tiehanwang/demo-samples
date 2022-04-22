@@ -9,7 +9,7 @@ package com.leetcode.test;
  */
 public class Solution396 {
     public int maxRotateFunction(int[] nums) {
-        int sum = 0, f = 0, n = nums.length, ans;
+        int sum = 0, f = 0, n = nums.length, ans = 0;
         for (int i = 0; i < n; i++) {
             sum += nums[i];
             f += i * nums[i]; // 计算F(0)
