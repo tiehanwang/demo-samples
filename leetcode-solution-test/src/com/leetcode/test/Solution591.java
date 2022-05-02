@@ -23,24 +23,30 @@ public class Solution591 {
                 if (i == n - 1) {
                     return false;
                 }
+                //如果为结束标签
                 if (code.charAt(i + 1) == '/') {
+                    //从i开始的第一个>
                     int j = code.indexOf('>', i);
                     if (j < 0) {
                         return false;
                     }
+                    //i是< i+1是/ 要过滤
                     String tagname = code.substring(i + 2, j);
                     if (tags.isEmpty() || !tags.peek().equals(tagname)) {
                         return false;
                     }
                     tags.pop();
                     i = j + 1;
+                    //标签为空 且未到达结尾则说明第一个首标签被合并
                     if (tags.isEmpty() && i != n) {
                         return false;
                     }
+                    //如果是遇到cdata
                 } else if (code.charAt(i + 1) == '!') {
                     if (tags.isEmpty()) {
                         return false;
                     }
+                    //<![CDATA[
                     if (i + 9 > n) {
                         return false;
                     }
@@ -53,6 +59,7 @@ public class Solution591 {
                         return false;
                     }
                     i = j + 1;
+                    //正常开始标签
                 } else {
                     int j = code.indexOf('>', i);
                     if (j < 0) {
@@ -70,6 +77,7 @@ public class Solution591 {
                     tags.push(tagname);
                     i = j + 1;
                 }
+                //其他非<字符
             } else {
                 if (tags.isEmpty()) {
                     return false;
@@ -77,7 +85,6 @@ public class Solution591 {
                 ++i;
             }
         }
-
         return tags.isEmpty();
     }
 }
