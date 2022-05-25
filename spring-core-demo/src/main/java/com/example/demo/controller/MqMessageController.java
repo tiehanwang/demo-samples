@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class MqMessageController {
-    @Autowired
-    RocketMQTemplate rocketMQTemplate;
-
-    @GetMapping("/push")
-    public String pushMeg(@RequestParam("id") int id){
-        rocketMQTemplate.convertAndSend("test-topic","你好"+id);
-        return "helloworld";
-    }
+//    @Autowired
+//    RocketMQTemplate rocketMQTemplate;
+//
+//    @GetMapping("/push")
+//    public String pushMeg(@RequestParam("id") int id){
+//        rocketMQTemplate.convertAndSend("test-topic","你好"+id);
+//        return "helloworld";
+//    }
 }

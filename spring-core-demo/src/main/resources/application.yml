@@ -1,8 +1,18 @@
+#server.ssl.key-password
+#访问key store中key的密码.
+#server.ssl.key-store-password
+#设定访问key store的密码.
 server:
   port: 8085
-rocketmq:
-  name-server: 127.0.0.1:9876
-  producer:
-    group: my-produce-group
-  consumer:
-    group: my-consumer-group
+  ssl:
+    key-store: spring-core-demo/src/main/resources/tomcat.keystore
+    key-store-type: JKS
+    key-alias: tomcat
+    key-store-password: 123456
+    key-password: 123456
+#rocketmq:
+#  name-server: 127.0.0.1:9876
+#  producer:
+#    group: my-produce-group
+#  consumer:
+#    group: my-consumer-group
