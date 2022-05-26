@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @ClassName: Test
@@ -16,5 +17,11 @@ public class TestController {
     @RequestMapping("/testModel")
     public String testModelAttribute(Model model){
         return (String) model.getAttribute("hello");
+    }
+
+    @ResponseBody
+    @RequestMapping("/test/selectOne")
+    public String testOne(Integer i){
+        return "helloWorld"+i;
     }
 }
