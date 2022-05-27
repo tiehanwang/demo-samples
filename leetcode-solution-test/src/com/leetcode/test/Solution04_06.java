@@ -4,13 +4,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @ClassName: Solution0406
+ * @ClassName: Solution04_06
  * @Description: Solution leetcode question 04-06
  * @Author: TIEHAN WANG
  * @Date: 2022/5/16 9:15
  * @Version: v1.0
  */
-public class Solution0406 {
+public class Solution04_06 {
 //	//中序遍历 时间O(n)空间O(n)
 //	List<TreeNode> list = new LinkedList<>();
 //	int index;
