@@ -40,6 +40,6 @@ public class Solution473 {
 	}
 	public static void main (String[] args) {
 		Solution473 solution473 = new Solution473();
-		solution473.makesquare(new int[]{1,1,2,2,2});
+		solution473.makesquare(new int[]{1,2,3,4,6,7,8,9});
 	}
 }
