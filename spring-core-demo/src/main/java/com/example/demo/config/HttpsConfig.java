@@ -48,7 +48,7 @@ public class HttpsConfig{
 
 	private Connector createHTTPConnector() {
 		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
-		//同时启用http（8080）、https（8085）两个端口 设置重定向
+		//同时启用http（8086）、https（8085）两个端口 设置重定向
 		connector.setScheme("http");
 		connector.setSecure(false);
 		connector.setPort(8086);
