@@ -16,3 +16,8 @@ server:
 #    group: my-produce-group
 #  consumer:
 #    group: my-consumer-group
+referer:
+  enabled: false
+  referDomain:
+    - localhost
+    - 127.0.0.1
